@@ -4,9 +4,6 @@ import crypto from 'crypto';
 
 
 async function dumpFrame(input: string, output: string) {
-    //webpmux -get frame 8 /Users/alexpickett/Desktop/Projects/7TVScraping/downloadImages/cleaner/images/AAAA.webp -o /Users/alexpickett/Desktop/Projects/7TVScraping/downloadImages/cleaner/testOut/frame8.webp
-    // make a loop for each frame in the webp
-
     const process = Bun.spawn(["anim_dump", "-folder", output, input])
 
     
@@ -63,7 +60,7 @@ export default async function convertWebpToWebm(input: string, output: string) {
         console.log(combo.error)
         return combo.error
     }
-    
+
     return combo
 
 }
